@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/EU_Mapper" >
+        <file>EUICON.png</file>
+    </qresource>
+</RCC>
