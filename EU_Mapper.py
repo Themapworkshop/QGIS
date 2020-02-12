@@ -36,6 +36,7 @@ from .resources import *
 from .EU_Mapper_dialog import EUMapperDialog
 import os.path
 import sys
+from qgis.core import QgsApplication
 
 
 class EUMapper:
@@ -185,7 +186,7 @@ class EUMapper:
                 action)
             self.iface.removeToolBarIcon(action)
     def Population(self): #Function to display population map of the EU
-        path = sys.path[3] + '/eu_mapper' #Define path to the location of the maps (shapefiles)
+        path = QgsApplication.qgisSettingsDirPath() + '/python/plugins/eu_mapper' #Define path to the location of the maps (shapefiles)
         os.chdir(path) #Go to the file location
         Andet_Lag = self.iface.addVectorLayer(
             'TM_WORLD_BORDERS-0.3.shp',
@@ -226,7 +227,7 @@ class EUMapper:
         shp.setRenderer(myRenderer)
         pass #Similar steps as in the Population function will apply for the other functions
     def Populationd(self):
-        path = sys.path[3] + '/eu_mapper'
+        path = QgsApplication.qgisSettingsDirPath() + '/python/plugins/eu_mapper'
         os.chdir(path)
         Andet_Lag = self.iface.addVectorLayer(
             'TM_WORLD_BORDERS-0.3.shp',
@@ -267,7 +268,7 @@ class EUMapper:
         shp.setRenderer(myRenderer)
         pass
     def BNPC(self):
-        path = sys.path[3] + '/eu_mapper'
+        path = QgsApplication.qgisSettingsDirPath() + '/python/plugins/eu_mapper'
         os.chdir(path)
         Andet_Lag = self.iface.addVectorLayer(
             'TM_WORLD_BORDERS-0.3.shp',
@@ -308,7 +309,7 @@ class EUMapper:
         shp.setRenderer(myRenderer)
         pass
     def AverageSalary(self):
-        path = sys.path[3] + '/eu_mapper'
+        path = QgsApplication.qgisSettingsDirPath() + '/python/plugins/eu_mapper'
         os.chdir(path)
         Andet_Lag = self.iface.addVectorLayer(
             'TM_WORLD_BORDERS-0.3.shp',
@@ -349,7 +350,7 @@ class EUMapper:
         shp.setRenderer(myRenderer)
         pass
     def LifeExpectancy(self):
-        path = sys.path[3] + '/eu_mapper'
+        path = QgsApplication.qgisSettingsDirPath() + '/python/plugins/eu_mapper'
         os.chdir(path)
         Andet_Lag = self.iface.addVectorLayer(
             'TM_WORLD_BORDERS-0.3.shp',
@@ -386,7 +387,7 @@ class EUMapper:
         shp.setRenderer(myRenderer)
         pass
     def COEMISSIONS(self):
-        path = sys.path[3] + '/eu_mapper'
+        path = QgsApplication.qgisSettingsDirPath() + '/python/plugins/eu_mapper'
         os.chdir(path)
         Andet_Lag = self.iface.addVectorLayer(
             'TM_WORLD_BORDERS-0.3.shp',
@@ -435,7 +436,7 @@ class EUMapper:
         shp.setRenderer(myRenderer)
         pass
     def PlainEU(self):
-        path = sys.path[3] + '/eu_mapper'
+        path = QgsApplication.qgisSettingsDirPath() + '/python/plugins/eu_mapper'
         os.chdir(path)
         EU_LAG = self.iface.addVectorLayer('EU_COUNTRIES_BOUNDARIES.shp',
                                            'EU Countries', 'ogr')
@@ -447,7 +448,7 @@ class EUMapper:
 
 
     def FIREPOWER(self):
-        path = sys.path[3] + '/eu_mapper'
+        path = QgsApplication.qgisSettingsDirPath() + '/python/plugins/eu_mapper'
         os.chdir(path)
         Andet_Lag = self.iface.addVectorLayer('TM_WORLD_BORDERS-0.3.shp',
             'NON EU Countries', 'ogr')
